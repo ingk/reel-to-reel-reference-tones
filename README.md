@@ -12,11 +12,11 @@ will appreciate it.
 
 ## Getting Started
 
-If you just want to download the reference tones, you can check out the latest release.
+You don't need to build the reference tones yourself. Check the [release page](https://github.com/ingk/reel-to-reel-reference-tones/releases) to download the latest version.
 
 ### Prerequisites
 
-To build the reference tones yourself, you only need [sox](https://sox.sourceforge.net) installed.
+To build the reference tones on your computer, [sox](https://sox.sourceforge.net) needs to be installed as a dependency.
 
 ### Installation
 
