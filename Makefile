@@ -16,7 +16,12 @@ clean:
 
 release: clean generate
 	zip output/reference-tones.zip output/*.wav
-	gh release create output/reference-tones.zip
+	if [ -z "$(RELEASE_TAG)" ]; then \
+		echo "RELEASE_TAG environment variable missing"; \
+	else \
+		gh release create $(RELEASE_TAG) --latest -t "Reference Tones $(RELEASE_TAG)" -F ReleaseNotes.template.md 'output/reference-tones.zip#Reference Tones'; \
+	fi
+	
 .PHONY: release
 
 bootstrap-build-mac:
