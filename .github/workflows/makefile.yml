@@ -19,3 +19,10 @@ jobs:
 
     - name: Generate reference tones
       run: make
+
+    - name: File size
+      uses: alexrogalskiy/github-action-file-size@master
+      with:
+        reportName: 'Output file sizes'
+        sourceFilePath: './output'
+        sizeUnit: 'mb'
