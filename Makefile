@@ -7,7 +7,7 @@ generate:
 	sox -r 48000 -n -b 24 -c 1 reference-tones/sine15k.wav synth 20 sin 15000 vol -6dB
 	sox -r 48000 -n -b 24 -c 1 reference-tones/sine100.wav synth 20 sin 100 vol -6dB
 	sox -r 48000 -n -b 24 -c 1 reference-tones/sine50.wav synth 20 sin 50 vol -6dB
-	sox reference-tones/silence.wav reference-tones/sine1k.wav reference-tones/silence.wav reference-tones/sine10k.wav reference-tones/silence.wav reference-tones/sine15k.wav reference-tones/silence.wav reference-tones/sine100.wav reference-tones/silence.wav reference-tones/sine50.wav reference-tones/silence.wav reference-tones/reference.wav
+	sox reference-tones/silence.wav reference-tones/sine1k.wav reference-tones/silence.wav reference-tones/sine10k.wav reference-tones/silence.wav reference-tones/sine15k.wav reference-tones/silence.wav reference-tones/sine100.wav reference-tones/silence.wav reference-tones/sine50.wav reference-tones/silence.wav reference-tones/reference-tones.wav
 .PHONY: generate
 
 release: generate
@@ -37,4 +37,3 @@ bootstrap-release-mac:
 
 bootstrap-mac: bootstrap-build-mac bootstrap-release-mac
 .PHONY: bootstrap-mac
-
