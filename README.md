@@ -3,6 +3,9 @@
 
 # Reel to Reel Reference Tones
 
+![Release](https://badgers.space/github/release/ingk/reel-to-reel-reference-tones)
+![MIT license](https://badgers.space/github/license/ingk/reel-to-reel-reference-tones)
+
 ## About The Project
 
 This is a project to provide reference tones used for reel to reel audio tapes. By using reference tones 
