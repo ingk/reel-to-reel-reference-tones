@@ -34,8 +34,7 @@ jobs:
       id: tag
       if: steps.makefile-changed.outputs.any_changed == 'true'
       run: |
-        # See https://docs.github.com/en/get-started/using-git/dealing-with-special-characters-in-branch-and-tag-names
-        TAG=v$(date +%Y%m%d%H%m)
+        TAG=v$(date +%Y%m%d%H%M)
         echo "$TAG"
         echo "tag=$TAG" >> $GITHUB_OUTPUT
 
