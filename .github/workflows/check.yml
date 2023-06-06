@@ -1,4 +1,4 @@
-name: Check workflow
+name: Check
 
 on:
   push:
