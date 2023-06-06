@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  release:
 
     runs-on: ubuntu-latest
 
@@ -39,6 +39,7 @@ jobs:
         echo "tag=$TAG" >> $GITHUB_OUTPUT
 
     - name: Create tag
+      if: steps.makefile-changed.outputs.any_changed == 'true'
       uses: rickstaa/action-create-tag@v1
       with:
         tag: ${{ steps.tag.outputs.tag }}
