@@ -3,8 +3,10 @@
 
 # Reel to Reel Reference Tones
 
+![Analog](https://honey.badgers.space/badge/-/analog%20audio/red?icon=feather-headphones&label=)
 ![Release](https://badgers.space/github/release/ingk/reel-to-reel-reference-tones)
-![MIT license](https://badgers.space/github/license/ingk/reel-to-reel-reference-tones)
+![Checks](https://badgers.space/github/checks/ingk/reel-to-reel-reference-tones/main)
+![MIT license](https://badgers.space/github/license/ingk/reel-to-reel-reference-tones/?color=green)
 
 ## About The Project
 
