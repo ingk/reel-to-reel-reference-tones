@@ -1,0 +1,35 @@
+name: Check workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    defaults:
+      run:
+        shell: bash
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: sudo apt-get install sox
+
+    - name: Generate reference tones
+      run: make
+
+    - name: Check existence of generated files
+      uses: JJ/files-present-action@releases/v1
+      with:
+        files: "output/reference.wav, output/silence.wav, output/sine1k.wav, output/sine10k.wav, output/sine15k.wav, output/sine50.wav, output/sine100.wav"
+
+    - name: List file sizes
+      run: ls -lh output/ | awk '{print $5,$9}'
+
+    - name: Show file metadata
+      run: file output/*.wav
