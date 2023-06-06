@@ -38,4 +38,3 @@ jobs:
         files: reference-tones.zip
         fail_on_unmatched_files: true
         name: Reference Tones ${{ github.ref }}
-        draft: true
