@@ -1,4 +1,4 @@
-name: Check workflow
+name: Check
 
 on:
   push:
@@ -7,10 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-    defaults:
-      run:
-        shell: bash
+  check:
 
     runs-on: ubuntu-latest
 
@@ -28,8 +25,7 @@ jobs:
       with:
         files: "output/reference.wav, output/silence.wav, output/sine1k.wav, output/sine10k.wav, output/sine15k.wav, output/sine50.wav, output/sine100.wav"
 
-    - name: List file sizes
-      run: ls -lh output/ | awk '{print $5,$9}'
-
-    - name: Show file metadata
-      run: file output/*.wav
+    - name: List file metadata
+      run: |
+        ls -lh output/ | awk '{print $5,$9}'
+        file output/*.wav
