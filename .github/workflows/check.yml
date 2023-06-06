@@ -8,9 +8,6 @@ on:
 
 jobs:
   check:
-    defaults:
-      run:
-        shell: bash
 
     runs-on: ubuntu-latest
 
