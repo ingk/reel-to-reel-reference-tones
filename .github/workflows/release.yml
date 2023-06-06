@@ -29,6 +29,17 @@ jobs:
         ls -lh reference-tones/ | awk '{print $5,$9}'
         file reference-tones/*.wav
         stat reference-tones.zip
+    
+    - name: Tag the repository
+      id: tag
+      if: steps.makefile-changed.outputs.any_changed == 'true'
+      run: |
+        # See https://docs.github.com/en/get-started/using-git/dealing-with-special-characters-in-branch-and-tag-names
+        TAG=v$(date -Iseconds | sed 's/[T:\+]/-/g')
+        echo "$TAG"
+        echo "tag=$TAG" >> $GITHUB_OUTPUT
+        git tag -a $TAG -m "Published version $TAG" ${GITHUB_SHA}
+        git push origin $TAG
 
     - name: Release
       if: steps.makefile-changed.outputs.any_changed == 'true'
@@ -37,4 +48,5 @@ jobs:
         body_path: ReleaseNotes.template.md
         files: reference-tones.zip
         fail_on_unmatched_files: true
-        name: Reference Tones ${{ github.ref }}
+        tag_name: ${{ steps.tag.outputs.tag }}
+        name: Reference Tones ${{ steps.tag.outputs.tag }}
