@@ -37,5 +37,5 @@ jobs:
         body_path: ReleaseNotes.template.md
         files: reference-tones.zip
         fail_on_unmatched_files: true
-        name: Reference Tones
+        name: Reference Tones {{ github.ref }}
         draft: true
