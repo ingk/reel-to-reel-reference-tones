@@ -24,7 +24,7 @@ To build the reference tones on your computer, [sox](https://sox.sourceforge.net
 ### Installation
 
 1. On a Mac you can run `make bootstrap-build-mac` to install the dependency.
-2. Then `make` will generate the audio files inside the `output` directory
+2. Then `make` will generate the audio files inside the `reference-tones` directory
    1. The directory will include all reference tones in separate file
    2. There is also a combined/ready to use `reference.wav`
 

@@ -23,9 +23,9 @@ jobs:
     - name: Check existence of generated files
       uses: JJ/files-present-action@releases/v1
       with:
-        files: "output/reference.wav, output/silence.wav, output/sine1k.wav, output/sine10k.wav, output/sine15k.wav, output/sine50.wav, output/sine100.wav"
+        files: "reference-tones/reference-tones.wav, reference-tones/silence.wav, reference-tones/sine1k.wav, reference-tones/sine10k.wav, reference-tones/sine15k.wav, reference-tones/sine50.wav, reference-tones/sine100.wav"
 
     - name: List file metadata
       run: |
-        ls -lh output/ | awk '{print $5,$9}'
-        file output/*.wav
+        ls -lh reference-tones/ | awk '{print $5,$9}'
+        file reference-tones/*.wav

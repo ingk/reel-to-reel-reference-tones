@@ -26,8 +26,8 @@ jobs:
       run: |
         sudo apt-get install sox zip
         make release
-        ls -lh output/ | awk '{print $5,$9}'
-        file output/*.wav
+        ls -lh reference-tones/ | awk '{print $5,$9}'
+        file reference-tones/*.wav
         stat reference-tones.zip
 
     - name: Release
